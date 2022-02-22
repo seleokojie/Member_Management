@@ -1,6 +1,14 @@
-<div style="background-color: green;">
+<div style="">
 
   <button>Manage Family</button>
   <button>Manage Classes</button>
+
+  <div *ngFor="let item of moks; let i = index">
+    <button (click)="changeMok(i)">{{item}}</button>
   </div>
 
+  <h1>
+    {{moks[currentMok]}}
+  </h1>
+
+</div>
