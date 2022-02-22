@@ -1,14 +1,42 @@
-<div style="">
+<div style="display: flex; flex-direction: row;">
 
-  <button>Manage Family</button>
-  <button>Manage Classes</button>
 
-  <div *ngFor="let item of moks; let i = index">
-    <button (click)="changeMok(i)">{{item}}</button>
+  <div>
+    <button style="font-size: 200%;" (click)="toggleMokButton()">
+      {{moks[currentMok]}}
+      <div *ngIf="mokButtonActive" style="display: flex; flex-direction: column;">
+        <button style="font-size: 100%;"  (click)="changeMok(i)" *ngFor="let item of moks; let i = index">
+          {{item}}
+        </button>
+      </div>
+    </button>
   </div>
 
-  <h1>
+
+
+  <div style="padding: 25px; border: 3px solid black;" class="sbangs">
+
+    <div *ngFor="let item of sbangs">
+      {{item}}
+    </div>
+  </div>
+
+  <div style="padding: 25px; border: 3px solid black;" class="familys">
+
+    <div *ngFor="let item of families">
+      {{item}}
+    </div>
+  </div>
+
+  <!-- <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+    <div *ngFor="let item of moks; let i = index">
+      <button (click)="changeMok(i)">{{item}}</button>
+    </div>
+  </div> -->
+
+
+  <!-- <h1>
     {{moks[currentMok]}}
-  </h1>
+  </h1> -->
 
 </div>
