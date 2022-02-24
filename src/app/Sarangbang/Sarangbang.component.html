@@ -1,0 +1,11 @@
+<div style="border: 1px solid black; display: flex; flex-direction: column; margin-inline: 15px;">
+  <h1 style="padding-inline: 15px;">
+    {{sbangName}}
+  </h1>
+
+  <div>
+    <app-user *ngFor="let user of userDataArray" [userData]="user">
+      test
+    </app-user>
+  </div>
+</div>

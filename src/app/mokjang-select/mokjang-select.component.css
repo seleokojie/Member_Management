@@ -1,0 +1,10 @@
+button{
+  background-color: inherit;
+  border: 1px solid black;
+  padding: 25px;
+  cursor: pointer;
+}
+
+button:hover{
+  font-weight: bold;
+}

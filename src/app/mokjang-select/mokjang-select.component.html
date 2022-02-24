@@ -1,0 +1,23 @@
+<div>
+  <button style="background-color: #fb0;" (click)="OnMokSelect()">
+    <h1>
+      {{moks[currentMok]}}
+    </h1>
+
+    <div  *ngIf="mokSelectionShow" style="display: flex; flex-direction: column; overflow: scroll; max-height: 50vh; overflow-x: hidden; border: 1px solid black;">
+      <button (click)="OnSelectMok(i)" style="text-align: center; background-color: white;" *ngFor="let item of moks; let i = index">
+        {{item}}
+      </button>
+    </div>
+
+  </button>
+  <div style="max-width: fit-content;">
+    <h1 style="text-align: center; align-items: center;">
+      Lead By
+    </h1>
+    <h2 style="text-align: center;">
+      {{mokjangLeader.name}}
+    </h2>
+
+  </div>
+</div>

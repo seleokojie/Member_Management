@@ -1,1 +1,7 @@
-<app-member-management></app-member-management>
+<div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+
+  <app-mokjang-select></app-mokjang-select>
+
+  <app-Sarangbang *ngFor="let item of sarangbangs" [userDataArray]="users" [sbangName]="item.name"></app-Sarangbang>
+
+</div>
