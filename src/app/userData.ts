@@ -9,7 +9,41 @@ export class UserData{
   mokjangID:number = 0;
   memberID:number = 0;
 
-  role_permissions:string = "user";//choice of user or admin; maybe make it a boolean?
+  //ADDED BELOW VARS FROM MEMBER TABLE TEMPLATE IN GROUP 3 FILE EXCHANGE
+
+  active:boolean = false;
+  admin:boolean = false;
+  birthdate:Date = new Date();
+  campusName:boolean = false;//korean congregation of english congregation, KC or EC
+
+  efName:string = "n/a"//english first name;
+  emname:string = "n/a"//english middle name;
+  elname:string = "n/a"//english last name
+
+  kfname:string = "n/a"//korean first name
+  klname:string = "n/a"//korean last name
+
+  gender:string = "unspecified"//gender male/female ? boolean?
+
+  homeAddress1:string = "n/a";
+  homeAddress2:string = "n/a";
+  city:string = "n/a";
+  state:string = "n/a";
+  zipcode:number = 0;
+  email:string = "n/a";
+  homePhone:number = 0;
+  mobilePhone:number = 0;
+
+  houseHoldPrimaryContact:number = 0;//memberID, head of family
+
+  password:string = ""//encrypted password; how to do???
+
+  offeringID:number = 0;//offering id; not sure what this is exactly ?
+
+  emailNotifications:boolean = false;
+
+  anniversary:Date = new Date();//date of joining im assuming
+
 
   constructor(name:string, photoref?:string ){
 
