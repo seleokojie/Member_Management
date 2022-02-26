@@ -1,3 +1,4 @@
+import { AppComponent } from './../app.component';
 import { UserData } from './../userData';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -20,6 +21,15 @@ export class UserComponent implements OnInit {
 
   //default values for the varialbe userData of type UserData.  this class can be found in src/app/userData.ts
   @Input() userData:UserData = new UserData("Unset User Data");
+
+  OnChooseUser(){
+    this.app.selectedUser = this.userData;
+    this.app.editorMode = true;
+  }
+
+  constructor(private app:AppComponent){
+
+  }
 
   ngOnInit() {
   }

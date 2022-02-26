@@ -1,0 +1,7 @@
+<form #namesForm="ngForm" (ngSubmit)="OnSubmitChanges(namesForm)">
+  <label for="fname">First Name:</label><br>
+  <input type="text" id="fname" name="fname" [ngModel]="user.name"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" [ngModel]="user.elname"><br><br>
+  <input type="submit" value="Submit">
+</form>

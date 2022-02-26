@@ -1,7 +1,21 @@
 <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
 
+  <!-- selecting mokjangs -->
   <app-mokjang-select></app-mokjang-select>
 
-  <app-Sarangbang *ngFor="let item of sarangbangs" [userDataArray]="users" [sbangName]="item.name"></app-Sarangbang>
+
+  <!-- searching for members stuff -->
+  <div *ngIf="editorMode == false" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+    <app-Sarangbang *ngFor="let item of sarangbangs" [userDataArray]="users" [sbangName]="item.name"></app-Sarangbang>
+
+    <app-family></app-family>
+  </div>
+
+
+  <!-- editorMode stuff -->
+  <div *ngIf="editorMode == true">
+    <app-user-editor [user]="selectedUser"></app-user-editor>
+  </div>
+
 
 </div>

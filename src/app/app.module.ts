@@ -8,15 +8,18 @@ import { MemberManagementComponent } from './member-management/member-management
 import { MokjangSelectComponent } from './mokjang-select/mokjang-select.component';
 import { SarangbangComponent } from './Sarangbang/Sarangbang.component';
 import { FormsModule } from '@angular/forms';//for double binding
+import { FamilyComponent } from './family/family.component';
+import { UserEditorComponent } from './user-editor/user-editor.component';
 
 @NgModule({
-  declarations: [
+  declarations: [		
     AppComponent,
       MemberManagementComponent,
       MokjangSelectComponent,
       SarangbangComponent,
       UserComponent,
-
+      FamilyComponent,
+      UserEditorComponent
    ],
   imports: [
     BrowserModule,

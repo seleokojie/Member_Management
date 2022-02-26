@@ -1,7 +1,7 @@
 import { Sarangbang } from './sarangbang';
 import { Family } from './family';
 import { UserData } from './userData';
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { MokjangSelectComponent } from './mokjang-select/mokjang-select.component';
 import { SarangbangComponent } from './Sarangbang/Sarangbang.component';
 
@@ -17,6 +17,10 @@ export class AppComponent {
   users:UserData[] = [new UserData("New User 1"), new UserData("New User 2"), new UserData("New User 3")];
   families:Family[] = [];
   sarangbangs:Sarangbang[] = [new Sarangbang("Testing sarangbang 1", 1), new Sarangbang("Testing sarangbang 2", 2), new Sarangbang("Testing sarangbang 3", 3)];
+
+  editorMode:boolean = false;
+
+  selectedUser:UserData = new UserData("n/a");
 
 
   public GetMokjangUsers(mokjang:Number){
