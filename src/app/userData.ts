@@ -16,14 +16,14 @@ export class UserData{
   birthdate:Date = new Date();
   campusName:boolean = false;//korean congregation of english congregation, KC or EC
 
-  efName:string = "n/a"//english first name;
-  emname:string = "n/a"//english middle name;
-  elname:string = "n/a"//english last name
+  efName:string = "First_name"//english first name;
+  emname:string = "Middle_name"//english middle name;
+  elname:string = "Last_name"//english last name
 
   kfname:string = "n/a"//korean first name
   klname:string = "n/a"//korean last name
 
-  gender:string = "unspecified"//gender male/female ? boolean?
+  gender:string = "Gender"//gender male/female ? boolean?
 
   homeAddress1:string = "n/a";
   homeAddress2:string = "n/a";

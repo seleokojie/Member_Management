@@ -14,9 +14,9 @@ import { SarangbangComponent } from './Sarangbang/Sarangbang.component';
 export class AppComponent {
   title = 'app';
 
-  users:UserData[] = [new UserData("New User 1"), new UserData("New User 2"), new UserData("New User 3")];
+  users:UserData[] = [new UserData("First Name Member 1"), new UserData("First Name Member 2"), new UserData("First Name Member 3")];
   families:Family[] = [];
-  sarangbangs:Sarangbang[] = [new Sarangbang("Testing sarangbang 1", 1), new Sarangbang("Testing sarangbang 2", 2), new Sarangbang("Testing sarangbang 3", 3)];
+  sarangbangs:Sarangbang[] = [new Sarangbang("Sarangbang Name 1", 1), new Sarangbang("Sarangbang Name 2", 2), new Sarangbang("Sarangbang Name 3", 3)];
 
   editorMode:boolean = false;
 

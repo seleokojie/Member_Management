@@ -10,16 +10,18 @@ import { SarangbangComponent } from './Sarangbang/Sarangbang.component';
 import { FormsModule } from '@angular/forms';//for double binding
 import { FamilyComponent } from './family/family.component';
 import { UserEditorComponent } from './user-editor/user-editor.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 @NgModule({
-  declarations: [		
+  declarations: [			
     AppComponent,
       MemberManagementComponent,
       MokjangSelectComponent,
       SarangbangComponent,
       UserComponent,
       FamilyComponent,
-      UserEditorComponent
+      UserEditorComponent,
+      NavigationBarComponent
    ],
   imports: [
     BrowserModule,

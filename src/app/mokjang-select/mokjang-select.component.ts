@@ -1,3 +1,4 @@
+import { AppComponent } from './../app.component';
 import { UserData } from './../userData';
 import { Component, OnInit } from '@angular/core';
 
