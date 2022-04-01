@@ -7,3 +7,16 @@ button{
 
   padding-inline: 15px;
 }
+
+.filter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-inline: 20px;
+}
+
+h1, h2, h3{
+  margin: 0;
+  text-align: center;
+}

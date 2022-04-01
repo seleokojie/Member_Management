@@ -1,26 +1,29 @@
-<div style="width: 100%; background-color: #688ccb">
-  <p>
-    Church of Philipi Member Management
-  </p>
-  <div #buttons style="display: flex; flex-direction:row; justify-content:center; margin-bottom: 20px">
-    <div style="margin-inline: 20px;">
-      <button >Button 1</button>
+<div style="width: 100%; background-color: #688ccb; display:flex">
+  <div>
+    <h1>Church of Philipi</h1>
+    <h2>Member Management</h2>
+  </div>
+  <div style="display: flex; flex-direction:row; flex-wrap:wrap; justify-content:center; margin-bottom: 0px; margin-top:40px">
+    <div class="filter">
+      <h3>Filter by Mokjang</h3>
+      <select (change)="changeSelectedMokjang($event)">
+        <option value="0">Select Mokjang:</option>
+        <option *ngFor="let item of mokjangList;let i=index" value="{{i + 1}}">{{item}} : {{i}}</option>
+      </select>
     </div>
-    <div style="margin-inline: 20px;">
-      <button >Button 2</button>
-    </div>
-    <div style="margin-inline: 20px;">
-      <button >Button 3</button>
-    </div>
-    <div style="margin-inline: 20px;">
-      <button >Button 4</button>
+    <div class="filter">
+      <h3>Filter by Sarangbang</h3>
+      <select (change)="changeSelectedSarangbang($event)">
+        <option value="0">Select Sarangbang:</option>
+        <option *ngFor="let item of sarangbangList;let i=index" value="{{i + 1}}">{{item}} : {{i}}</option>
+      </select>
     </div>
 
-    <div class="topnav" style="margin-inline: 20px;">
+    <div class="topnav" style="margin-inline: 20px; margin-top:20px">
+      <h3>Search for Member by Name</h3>
       <input type="text" placeholder="name...">
-      <button type="submit">Search</button>
+      <button style="margin-left:auto; margin-right:auto" type="submit">Search</button>
+
     </div>
   </div>
-
 </div>
-

@@ -1,3 +1,11 @@
-.towson-colors{
-  background-color: #fb0;
+.user-column-list{
+  column-count: 3;
+  column-rule: 2px dotted black;
+
+  align-items: center;
+  align-content: center;
+  text-align: left;
+
+  width: 100%;
+
 }

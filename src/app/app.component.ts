@@ -14,13 +14,19 @@ import { SarangbangComponent } from './Sarangbang/Sarangbang.component';
 export class AppComponent {
   title = 'app';
 
-  users:UserData[] = [new UserData("First Name Member 1"), new UserData("First Name Member 2"), new UserData("First Name Member 3")];
+  users:UserData[] = [new UserData("First Name"),new UserData("First Name"),new UserData("First Name"),new UserData("First Name"),new UserData("First Name"),new UserData("First Name"),new UserData("First Name"),new UserData("First Name"),new UserData("First Name"), ];
   families:Family[] = [];
   sarangbangs:Sarangbang[] = [new Sarangbang("Sarangbang Name 1", 1), new Sarangbang("Sarangbang Name 2", 2), new Sarangbang("Sarangbang Name 3", 3)];
 
   editorMode:boolean = false;
 
   selectedUser:UserData = new UserData("n/a");
+
+  public SelectUser(e:any){
+    this.selectedUser = e as UserData;
+    console.log("selected: " + (e as UserData).name);
+    this.editorMode = true;
+  }
 
 
   public GetMokjangUsers(mokjang:Number){

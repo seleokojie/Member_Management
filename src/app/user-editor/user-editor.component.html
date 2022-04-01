@@ -1,8 +1,24 @@
-<form #namesForm="ngForm" (ngSubmit)="OnSubmitChanges(namesForm)">
-  <label for="fname">First Name:</label><br>
-  <input type="text" id="fname" name="fname" [ngModel]="user.name"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" [ngModel]="user.elname"><br><br>
+<div style="display: inline-flex;">
+  <img style="max-width: 250px; max-height:250px; margin-inline:15px" src="{{user.photoRef}}">
+  <form #namesForm="ngForm" (ngSubmit)="OnSubmitChanges(namesForm)">
+    <label for="fname">First Name:</label><br>
+    <input type="text" id="fname" name="fname" [ngModel]="user.name"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" [ngModel]="user.elname"><br><br>
 
-  <input type="submit" value="Submit Changes">
-</form>
+    <label for="homeAddress1">Home Address 1:</label><br>
+    <input type="text" id="homeAddress1" name="homeAddress1" [ngModel]="user.homeAddress1"><br>
+    <!-- <label for="homeAddress2">Home Address 2:</label><br>
+    <input type="text" id="homeAddress2" name="homeAddress2" [ngModel]="user.homeAddress2"><br><br> -->
+    <label for="city">City:</label><br>
+    <input type="text" id="city" name="city" [ngModel]="user.city"><br>
+
+    <label for="state">State:</label><br>
+    <input type="text" id="state" name="state" [ngModel]="user.state"><br>
+
+    <input type="submit" value="Submit Changes">
+  </form>
+
+
+</div>
+<button (click)="Cancel()">Cancel</button>

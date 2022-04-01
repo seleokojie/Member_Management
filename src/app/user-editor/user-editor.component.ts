@@ -20,6 +20,10 @@ export class UserEditorComponent implements OnInit {
     //This adjusts the local instance not the database instance; may be better to update the db then just retrieve the updated entry;
     this.user.name = data.value.fname;
     this.user.elname = data.value.lname;
+    this.user.homeAddress1 = data.value.homeAddress1;
+    this.user.homeAddress2 = data.value.homeAddress2;
+    this.user.city = data.value.city;
+    this.user.state = data.value.state;
 
     //change the database below
     //
@@ -32,6 +36,10 @@ export class UserEditorComponent implements OnInit {
     console.log("before: " + this.mainApp.editorMode);
     this.mainApp.editorMode = false;
     console.log("after: " + this.mainApp.editorMode);
+  }
+
+  public Cancel(){
+    this.mainApp.editorMode = false;
   }
 
   constructor(private mainApp:AppComponent) { }

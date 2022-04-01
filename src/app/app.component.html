@@ -3,14 +3,22 @@
 
 
   <!-- selecting mokjangs -->
-  <app-mokjang-select></app-mokjang-select>
+
 
 
   <!-- searching for members stuff -->
-  <div *ngIf="editorMode == false" style="display: flex; flex-direction: row; flex-wrap: wrap;">
-    <app-Sarangbang *ngFor="let item of sarangbangs" [userDataArray]="users" [sbangName]="item.name"></app-Sarangbang>
+  <div *ngIf="editorMode == false" style="display: flex; flex-direction: row; flex-wrap: wrap; width: 100%;">
+    <!-- <app-mokjang-select></app-mokjang-select> -->
+    <!-- <app-Sarangbang *ngFor="let item of sarangbangs" [userDataArray]="users" [sbangName]="item.name"></app-Sarangbang> -->
 
-    <app-family [familyMembers]="users" [familyHead]="users[0]"></app-family>
+    <!-- <app-family [familyMembers]="users" [familyHead]="users[0]"></app-family> -->
+    <!-- <app-user *ngFor="let user of users; let i = index" [userData]="users[i]"></app-user> -->
+    <div class="user-column-list">
+      <div style="display:flex"  *ngFor="let user of users; let i=index">
+        <p style="margin: 0px;">{{i + 1}}.)</p>
+        <h3 (click)="SelectUser(user)" style="cursor:pointer; margin-top:0; margin-left:5px">{{user.name}} {{user.elname}}</h3>
+      </div>
+    </div>
   </div>
 
 
