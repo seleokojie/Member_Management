@@ -7,25 +7,28 @@ import { AppComponent } from './app.component';
 import { MemberManagementComponent } from './member-management/member-management.component';
 import { MokjangSelectComponent } from './mokjang-select/mokjang-select.component';
 import { SarangbangComponent } from './Sarangbang/Sarangbang.component';
-import { FormsModule } from '@angular/forms';//for double binding
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';//for double binding
 import { FamilyComponent } from './family/family.component';
 import { UserEditorComponent } from './user-editor/user-editor.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
-
-// Add Angular Material Things here?
-import { MatButtonModule } from '@angular/material/button';
-
-//For the auto fill search bar text
-import {ReactiveFormsModule} from "@angular/forms";
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import { MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from "@angular/material/input"
-import {MatSelect, MatSelectModule} from '@angular/material/select'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatCardModule} from '@angular/material/card';
+import { MatSliderModule } from '@angular/material/slider';
+import { ProfileComponent } from './profile/profile.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatDividerModule } from '@angular/material/divider';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatListModule } from '@angular/material/list';
+
 @NgModule({
-  declarations: [
+  declarations: [			
     AppComponent,
       MemberManagementComponent,
       MokjangSelectComponent,
@@ -33,25 +36,15 @@ import {MatCardModule} from '@angular/material/card';
       UserComponent,
       FamilyComponent,
       UserEditorComponent,
-      NavigationBarComponent
+      NavigationBarComponent,
+      ProfileComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,//for double binding,
-
-    ReactiveFormsModule,
-
-    //Add angular Material Modules here as well
-    MatButtonModule,
-    MatAutocompleteModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    BrowserAnimationsModule,
-    MatBadgeModule,
-    MatCardModule,
-
+    FormsModule,
+    BrowserAnimationsModule,//for double binding
+    MatSliderModule, MatInputModule, MatButtonModule, MatSelectModule, MatRadioModule, MatCardModule, ReactiveFormsModule, MatGridListModule, MatMenuModule, MatIconModule, LayoutModule, MatDividerModule, FlexLayoutModule, MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
