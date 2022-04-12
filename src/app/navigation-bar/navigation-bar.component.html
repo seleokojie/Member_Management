@@ -1,9 +1,9 @@
 <div style="width: 100%; background-color: #688ccb; display:flex;">
-  <div>
+  <div style="display: flex; flex-direction:column">
     <h1>Church of Philipi</h1>
     <h2>Member Management</h2>
   </div>
-  <div style="display: flex; flex-wrap:wrap; justify-content:center; margin-bottom: 0px; margin-top:40px">
+  <div style="display: flex; flex-wrap:wrap; width:100%; justify-content:center; margin-top:auto">
     <div class="spacing">
       <form>
         <mat-form-field>
@@ -41,7 +41,7 @@
       </mat-autocomplete>
       <!-- SEARCH BUTTON -->
       <button mat-raised-button color="primary" style="margin-left:10px" type="submit" (click)="onSearch()"
-      matBadge="{{userNames.length}}" matBadgeColor="accent">Search</button> -->
+      matBadge="{{userNames.length}}" matBadgeColor="accent">Search</button>
     </div>
   </div>
 </div>

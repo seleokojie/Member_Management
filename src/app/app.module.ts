@@ -28,6 +28,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatListModule,
     MatAutocompleteModule,
     MatBadgeModule,
+    MatDialogModule,
 
   ],
   providers: [],

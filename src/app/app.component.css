@@ -9,3 +9,22 @@
   width: 100%;
 
 }
+
+@media screen and (max-width: 650px) {
+  /* table td:nth-of-type(3) {
+      display: none;
+  } */
+  .user-column-list{
+    column-count: 2;
+    /* background-color: red; */
+  }
+}
+@media screen and (max-width: 376px) {
+  /* table td:nth-of-type(4) {
+      display: none;
+  } */
+  .user-column-list{
+    column-count: 1;
+    /* background-color: green; */
+  }
+}
