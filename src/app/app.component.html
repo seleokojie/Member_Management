@@ -1,4 +1,3 @@
-<!-- <app-profile></app-profile> -->
 <app-navigation-bar></app-navigation-bar>
 <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
 
@@ -16,12 +15,14 @@
     <!-- <app-user *ngFor="let user of users; let i = index" [userData]="users[i]"></app-user> -->
     <div class="user-column-list">
       <div style="display:flex"  *ngFor="let user of users; let i=index">
-        <p style="margin: 0px;">{{i + 1}}.)</p>
-        <h3 (click)="SelectUser(user)" style="cursor:pointer; margin-top:0; margin-left:5px">{{user.name}} {{user.elname}}</h3>
+        <mat-card (click)="SelectUser(user)" style="cursor:pointer; margin-top:0; margin-left:5px">{{i + 1}}.) {{user.name}} {{user.elname}}</mat-card>
       </div>
     </div>
   </div>
 
+  <!-- <div>
+    <app-profile></app-profile>
+  </div> -->
 
   <!-- editorMode stuff -->
   <div *ngIf="editorMode == true">

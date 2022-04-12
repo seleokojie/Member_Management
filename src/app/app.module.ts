@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { MemberManagementComponent } from './member-management/member-management.component';
 import { MokjangSelectComponent } from './mokjang-select/mokjang-select.component';
 import { SarangbangComponent } from './Sarangbang/Sarangbang.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';//for double binding
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //for double binding
 import { FamilyComponent } from './family/family.component';
 import { UserEditorComponent } from './user-editor/user-editor.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
@@ -24,29 +24,48 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatDividerModule } from '@angular/material/divider';
-import { FlexLayoutModule } from '@angular/flex-layout';
+//import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from '@angular/material/list';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
-  declarations: [			
+  declarations: [
     AppComponent,
-      MemberManagementComponent,
-      MokjangSelectComponent,
-      SarangbangComponent,
-      UserComponent,
-      FamilyComponent,
-      UserEditorComponent,
-      NavigationBarComponent,
-      ProfileComponent
-   ],
+    MemberManagementComponent,
+    MokjangSelectComponent,
+    SarangbangComponent,
+    UserComponent,
+    FamilyComponent,
+    UserEditorComponent,
+    NavigationBarComponent,
+    ProfileComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule,//for double binding
-    MatSliderModule, MatInputModule, MatButtonModule, MatSelectModule, MatRadioModule, MatCardModule, ReactiveFormsModule, MatGridListModule, MatMenuModule, MatIconModule, LayoutModule, MatDividerModule, FlexLayoutModule, MatListModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule, //for double binding
+    MatSliderModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    MatGridListModule,
+    MatMenuModule,
+    MatIconModule,
+    LayoutModule,
+    MatDividerModule,
+    //FlexLayoutModule,
+    MatListModule,
+    MatAutocompleteModule,
+    MatBadgeModule,
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
