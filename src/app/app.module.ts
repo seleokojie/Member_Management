@@ -29,6 +29,7 @@ import { MatListModule } from '@angular/material/list';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatAutocompleteModule,
     MatBadgeModule,
     MatDialogModule,
+    MatCheckboxModule,
 
   ],
   providers: [],
