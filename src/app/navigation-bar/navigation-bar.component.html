@@ -8,7 +8,7 @@
       <form>
         <mat-form-field>
           <mat-label>Filter by Mokjang</mat-label>
-          <mat-select [(ngModel)]="selectedMok" name="selectedMok">
+          <mat-select disableOptionCentering [(ngModel)]="selectedMok" name="selectedMok">
             <mat-option *ngFor="let mok of mokjangList" [value]="mok">
               {{mok}}
             </mat-option>
@@ -20,7 +20,7 @@
       <form>
         <mat-form-field>
           <mat-label>Filter by Sarangbang</mat-label>
-          <mat-select [(ngModel)]="selectedSarang" name="selectedMok">
+          <mat-select disableOptionCentering [(ngModel)]="selectedSarang" name="selectedMok">
             <mat-option *ngFor="let sarang of sarangbangList" [value]="sarang">
               {{sarang}}
             </mat-option>

@@ -7,7 +7,7 @@
   <!-- Display the user names -->
   <div *ngIf="editorMode == false" style="display: flex; flex-direction: row; flex-wrap: wrap; width: 100%;">
     <div class="user-column-list">
-      <div style=""  *ngFor="let user of users; let i=index">
+      <div *ngFor="let user of users; let i=index">
         <mat-card (click)="SelectUser(user)" style="cursor:pointer; margin-top:0; margin-left:5px">{{i + 1}}.) {{user.name}} {{user.elname}}</mat-card>
       </div>
     </div>
@@ -17,7 +17,6 @@
   <div *ngIf="editorMode == true">
     <app-user-editor [user]="selectedUser"></app-user-editor>
   </div>
-
 
 </div>
 <button (click)="openDialog()">

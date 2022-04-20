@@ -38,6 +38,7 @@ export class AppComponent {
   sarangbangs:Sarangbang[] = [new Sarangbang("Sarangbang Name 1", 1), new Sarangbang("Sarangbang Name 2", 2), new Sarangbang("Sarangbang Name 3", 3)];
 
   editorMode:boolean = false;
+  user:UserData = new UserData("new name");
 
   selectedUser:UserData = new UserData("n/a");
 
