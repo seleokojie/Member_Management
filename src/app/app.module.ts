@@ -31,6 +31,24 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
+//Nest.js Stuff and Postgresqlimport { TypeOrmModule } from '@nestjs/typeorm';
+//import { Employee } from './Employee/employee.entity';
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+// // some code hidden for display purpose
+// @Module({
+//   // imports: [
+//   //   TypeOrmModule.forRoot({
+//   //     type: 'postgres',
+//   //     host: '74.208.128.169',
+//   //     port: 5432,
+//   //     username: 'postgres',
+//   //     password: '7422Race!',
+//   //     database: 'SE412',
+//   //     //entities: [Employee],
+//   //   })
+//   // ]
+// })
 @NgModule({
   declarations: [
     AppComponent,
