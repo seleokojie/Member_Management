@@ -1,7 +1,7 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from './user';
+import { UserEntity } from './userEntity';
 import { UserData } from './userData';
 
 //This service allows our website to connect to our nestjs REST api.  aka the backend
@@ -13,25 +13,33 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public testConnection(): Observable<User[]>{
-    return this.httpClient.get<User[]>(`${this.API_SERVER}/user-controller/GetMemberByID?id=2`);
+  public testConnection(): Observable<UserEntity[]>{
+    return this.httpClient.get<UserEntity[]>(`${this.API_SERVER}/user-controller/GetMemberByID?id=2`);
   }
 
-  public readContacts(){
-    return this.httpClient.get<UserData[]>(`${this.API_SERVER}/contacts`);
+  public GetMokjangMembers(mokjang_id : number): Observable<UserEntity[]>{
+    return this.httpClient.get<UserEntity[]>(`${this.API_SERVER}/user-controller/GetMokjangMembers?mokjang_id=` + mokjang_id);
   }
 
-  public createContact(user: UserData){
-    return this.httpClient.post<UserData>(`${this.API_SERVER}/contacts/create`, user);
+  public GetSarangbangMembers(mokjang_id : number, sarangbang_id:number): Observable<UserEntity[]>{
+    return this.httpClient.get<UserEntity[]>(`${this.API_SERVER}/user-controller/GetSarangbangMembers?mokjang_id=` + mokjang_id +"&sarangbang_id=" + sarangbang_id);
   }
 
-  public updateContact(user: UserData){
-    return this.httpClient.put<UserData>(`${this.API_SERVER}/contacts/${user.memberID}/update`, user);
-  }
+  // public readContacts(){
+  //   return this.httpClient.get<UserData[]>(`${this.API_SERVER}/contacts`);
+  // }
 
-  public deleteContact(id: number){
-    return this.httpClient.delete(`${this.API_SERVER}/contacts/${id}/delete`);
-  }
+  // public createContact(user: UserData){
+  //   return this.httpClient.post<UserData>(`${this.API_SERVER}/contacts/create`, user);
+  // }
+
+  // public updateContact(user: UserData){
+  //   return this.httpClient.put<UserData>(`${this.API_SERVER}/contacts/${user.memberID}/update`, user);
+  // }
+
+  // public deleteContact(id: number){
+  //   return this.httpClient.delete(`${this.API_SERVER}/contacts/${id}/delete`);
+  // }
 
 
 }

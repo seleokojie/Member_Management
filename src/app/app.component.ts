@@ -11,7 +11,7 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
-import { User } from './user';
+import { UserEntity } from './userEntity';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +20,7 @@ import { User } from './user';
 })
 export class AppComponent {
   title = 'app';
-  tempUser: User = new User();
+  tempUser: UserEntity = new UserEntity();
   constructor(public dialog: MatDialog, private apiService: ApiService) {}
 
   testConnection() {

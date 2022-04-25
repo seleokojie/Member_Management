@@ -1,3 +1,4 @@
+import { UserEntity } from './../userEntity';
 import { Component, Input } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
@@ -9,4 +10,7 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 })
 export class ProfileComponent {
   @Input() name = "name";
+
+
+  @Input() userEntity!: UserEntity;
 }

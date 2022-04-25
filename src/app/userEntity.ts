@@ -1,4 +1,4 @@
-export class User {
+export class UserEntity {
   id: number = 0;
   name: string = "_name_";
   title: string ="_title_";

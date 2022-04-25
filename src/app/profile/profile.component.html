@@ -4,13 +4,12 @@
       <mat-card-title>박정이</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <p>{{name}}</p>
 
       <!-- This area contains a profile system form using angular materials -->
       <img class="profile-image" src="../../../assets/empty profile picture.png" alt="Profile Picture" width = 150px; height = 150px; style="float:left; margin-top: 30px;">
 
       <mat-card class="mat-elevation-z0" style="float:left; margin-left:10px">
-        <div class = "user-name" style = "margin-top: 7px;">Jung Park</div>
+        <div class = "user-name" style = "margin-top: 7px;">Name:{{userEntity.name}} end</div>
         <button mat-raised-button color="primary" style="float:left; margin-left:3px">Edit Profile</button>
         <br><br>
 
