@@ -1,10 +1,37 @@
+import { Buffer } from "buffer";
 export class UserEntity {
-  id: number = 0;
-  name: string = "_name_";
-  title: string ="_title_";
-  email: string = "_email_";
-  phone: string = "_phone_";
-  address: string = "_address_";
-  city: string = "_city_";
-  visitation: boolean = false;
+  id!: number;
+
+  first_name!: string;
+
+  last_name!: string;
+
+  isAdmin!: boolean;
+
+  gender!: string;
+
+  email!: string;
+
+  phone!: string;
+
+  address!: string;
+
+  city!: string;
+
+  state!: string;
+
+  zipcode!: number;
+
+  birthdate!: Date;
+
+  // @Column({ type: 'bytea', nullable: false })
+  // profileImage!: Buffer; Needs lots of work to implement photos
+
+  password!: string;
+
+  visitation!: boolean;
+
+  mokjang_id!: number;
+
+  sarangbang_id!: number;
 }

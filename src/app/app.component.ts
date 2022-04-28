@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { ApiService } from './api.service';
 import { ProfileComponent } from './profile/profile.component';
 import { Sarangbang } from './sarangbang';
@@ -23,12 +24,12 @@ export class AppComponent {
   tempUser: UserEntity = new UserEntity();
   constructor(public dialog: MatDialog, private apiService: ApiService) {}
 
+  //This example shows how from an observable we can 'subscribe'; put the 'result' into a user and consoleLog that user
   testConnection() {
     this.apiService.testConnection().subscribe((result) => {
-      if (result != null && result.length > 0){
-        this.tempUser = result[0];
-        console.log(this.tempUser);
-      }
+      console.log(result);
+      var user: UserEntity = result;
+      console.log(user.first_name);
     });
   }
 
@@ -37,7 +38,7 @@ export class AppComponent {
       // width: '250px',
       // maxHeight: '95vh',
       // data: {name: this.name, animal: this.animal}
-      data: { name: this.tempUser.name },
+      data: { name: this.tempUser.first_name },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -73,6 +74,21 @@ export class AppComponent {
     this.selectedUser = e as UserData;
     console.log('selected: ' + (e as UserData).name);
     this.editorMode = true;
+  }
+
+  public CreateTestUser() {
+    var user: UserEntity = new UserEntity();
+    user.first_name = 'TEST NAME';
+    user.address = 'TEST ADDRESS';
+    this.apiService.CreateUser(user);
+  }
+
+  userByID : UserEntity = new UserEntity();
+
+  public GetUserByID(id:number){
+    this.apiService.GetMemberByID(id).subscribe((result)=>{
+      this.userByID = result as UserEntity;
+    })
   }
 
   public OnUserClick() {}
