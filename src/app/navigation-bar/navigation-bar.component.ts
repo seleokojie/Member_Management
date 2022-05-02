@@ -31,6 +31,7 @@ export class NavigationBarComponent implements OnInit {
         var test = this.appService.GetMembersByName(this.searchName).subscribe((result) =>{
           this.app.users = result as UserEntity[];
           console.log("name: " + this.searchName);
+          console.log("Found " + result.length + " memebers");
         });
       }
 
