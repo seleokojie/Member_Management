@@ -1,16 +1,21 @@
-<div style="width: 100%; background-color: #688ccb; display:flex;">
-  <div style="display: flex; flex-direction:column">
+<div class="navBar">
+  <div class="churchName">
     <h1>Church of Philipi</h1>
     <h2>Member Management</h2>
   </div>
   <div style="display: flex; flex-wrap:wrap; width:100%; justify-content:center; margin-top:auto">
     <div class="spacing">
       <form>
+        <mat-checkbox>Needs Visitation</mat-checkbox>
+      </form>
+    </div>
+    <div class="spacing">
+      <form>
         <mat-form-field>
           <mat-label>Filter by Mokjang</mat-label>
-          <mat-select [(ngModel)]="selectedMok" name="selectedMok">
-            <mat-option *ngFor="let mok of mokjangList" [value]="mok">
-              {{mok}}
+          <mat-select disableOptionCentering [(ngModel)]="selectedMok" name="mok">
+            <mat-option *ngFor="let mok of mokjangList" [value]="mok.value">
+              {{mok.viewValue}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -20,28 +25,45 @@
       <form>
         <mat-form-field>
           <mat-label>Filter by Sarangbang</mat-label>
-          <mat-select [(ngModel)]="selectedSarang" name="selectedMok">
-            <mat-option *ngFor="let sarang of sarangbangList" [value]="sarang">
-              {{sarang}}
+          <mat-select disableOptionCentering [(ngModel)]="selectedSarang" name="sarang">
+            <mat-option *ngFor="let sarang of sarangbangList" [value]="sarang.value">
+              {{sarang.viewValue}}
             </mat-option>
           </mat-select>
         </mat-form-field>
       </form>
     </div>
 
+
+
     <div class="spacing">
       <!-- SEARCH INPUT TEXT -->
-      <mat-label></mat-label>
-      <mat-form-field>
-        <input type="text" placeholder="Search by Name..." matInput [formControl]="myControl" [matAutocomplete]="auto">
-      </mat-form-field>
+      <form>
+        <mat-label></mat-label>
+        <mat-form-field>
+          <input type="text" placeholder="Search by Name..." matInput [(ngModel)]="searchName" [formControl]="myControl" [matAutocomplete]="auto" [value]="searchName">
+        </mat-form-field>
 
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let user of userNames" [value]="user">{{user}}</mat-option>
-      </mat-autocomplete>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let user of userNames" [value]="user">{{user}}</mat-option>
+        </mat-autocomplete></form>
+
+    </div>
+
+    <div class="spacing" style="margin-left:0px">
       <!-- SEARCH BUTTON -->
-      <button mat-raised-button color="primary" style="margin-left:10px" type="submit" (click)="onSearch()"
+      <button mat-raised-button color="primary" type="submit" (click)="Search()"
       matBadge="{{userNames.length}}" matBadgeColor="accent">Search</button>
     </div>
+
+    <div class="spacing" style="display: flex; flex-direction: column;">
+      <mat-label style="text-align: center;">Sort by:</mat-label>
+      <mat-button-toggle-group name="sortStyle">
+        <mat-button-toggle value="sort_alphabetical">Alphabetical</mat-button-toggle>
+        <mat-button-toggle value="sort_mokjang">Mokjang</mat-button-toggle>
+        <mat-button-toggle value="sort_sarangbang">Sarangbang</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
   </div>
 </div>

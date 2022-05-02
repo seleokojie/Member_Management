@@ -1,14 +1,15 @@
-button{
+button {
   background-color: #e56a2e;
   padding-inline: 15px;
 }
 
-.btnSpace{
+.btnSpace {
 
   padding-inline: 15px;
 }
 
-.filter{
+
+.filter {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,12 +17,34 @@ button{
   margin-inline: 20px;
 }
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
   margin: 0;
   text-align: center;
 }
 
-.spacing{
-margin-left: 20px;
-margin-right: 20px;
+.spacing {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.navBar{
+  width: 100%;
+  background-color: #688ccb;
+  display:flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 900px) {
+  .navBar{
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 600px) {
+  .navBar{
+    flex-direction: column;
+  }
 }

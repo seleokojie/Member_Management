@@ -29,6 +29,11 @@ import { MatListModule } from '@angular/material/list';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
+//For HTTpclient and accessing the BACKEND
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -65,6 +70,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatAutocompleteModule,
     MatBadgeModule,
     MatDialogModule,
+    MatCheckboxModule,
+    HttpClientModule,
+    MatButtonToggleModule,
 
   ],
   providers: [],

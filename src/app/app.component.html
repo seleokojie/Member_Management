@@ -7,8 +7,8 @@
   <!-- Display the user names -->
   <div *ngIf="editorMode == false" style="display: flex; flex-direction: row; flex-wrap: wrap; width: 100%;">
     <div class="user-column-list">
-      <div style=""  *ngFor="let user of users; let i=index">
-        <mat-card (click)="SelectUser(user)" style="cursor:pointer; margin-top:0; margin-left:5px">{{i + 1}}.) {{user.name}} {{user.elname}}</mat-card>
+      <div *ngFor="let user of users; let i=index">
+        <mat-card (click)="SelectUser(user)" style="cursor:pointer; margin-top:0; margin-left:5px">{{i + 1}}.) {{user.first_name}} {{user.last_name}} {{user.email}}</mat-card>
       </div>
     </div>
   </div>
@@ -18,8 +18,18 @@
     <app-user-editor [user]="selectedUser"></app-user-editor>
   </div>
 
-
 </div>
 <button (click)="openDialog()">
   Press Me
 </button>
+<button (click)="testConnection()">
+  TEST CONNECTION
+</button>
+<button (click)="CreateTestUser()">
+  TEST CREATE USER
+</button>
+<div>
+  <p>{{tempUser.first_name}</p>
+  <p>{{tempUser.address}}</p>
+  <p>{{tempUser.city}}</p>
+</div>
