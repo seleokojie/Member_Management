@@ -13,9 +13,9 @@
       <form>
         <mat-form-field>
           <mat-label>Filter by Mokjang</mat-label>
-          <mat-select disableOptionCentering [(ngModel)]="selectedMok" name="selectedMok">
-            <mat-option *ngFor="let mok of mokjangList" [value]="mok">
-              {{mok}}
+          <mat-select disableOptionCentering [(ngModel)]="selectedMok" name="mok">
+            <mat-option *ngFor="let mok of mokjangList" [value]="mok.value">
+              {{mok.viewValue}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -25,9 +25,9 @@
       <form>
         <mat-form-field>
           <mat-label>Filter by Sarangbang</mat-label>
-          <mat-select disableOptionCentering [(ngModel)]="selectedSarang" name="selectedMok">
-            <mat-option *ngFor="let sarang of sarangbangList" [value]="sarang">
-              {{sarang}}
+          <mat-select disableOptionCentering [(ngModel)]="selectedSarang" name="sarang">
+            <mat-option *ngFor="let sarang of sarangbangList" [value]="sarang.value">
+              {{sarang.viewValue}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -38,19 +38,21 @@
 
     <div class="spacing">
       <!-- SEARCH INPUT TEXT -->
-      <mat-label></mat-label>
-      <mat-form-field>
-        <input type="text" placeholder="Search by Name..." matInput [formControl]="myControl" [matAutocomplete]="auto">
-      </mat-form-field>
+      <form>
+        <mat-label></mat-label>
+        <mat-form-field>
+          <input type="text" placeholder="Search by Name..." matInput [(ngModel)]="searchName" [formControl]="myControl" [matAutocomplete]="auto" [value]="searchName">
+        </mat-form-field>
 
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let user of userNames" [value]="user">{{user}}</mat-option>
-      </mat-autocomplete>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let user of userNames" [value]="user">{{user}}</mat-option>
+        </mat-autocomplete></form>
+
     </div>
 
     <div class="spacing" style="margin-left:0px">
       <!-- SEARCH BUTTON -->
-      <button mat-raised-button color="primary" type="submit" (click)="onSearch()"
+      <button mat-raised-button color="primary" type="submit" (click)="Search()"
       matBadge="{{userNames.length}}" matBadgeColor="accent">Search</button>
     </div>
 

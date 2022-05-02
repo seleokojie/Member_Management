@@ -1,4 +1,3 @@
-import { Observable } from 'rxjs';
 import { ApiService } from './api.service';
 import { ProfileComponent } from './profile/profile.component';
 import { Sarangbang } from './sarangbang';
@@ -47,16 +46,11 @@ export class AppComponent {
     });
   }
 
-  users: UserData[] = [
-    new UserData('First Name'),
-    new UserData('First Name'),
-    new UserData('First Name'),
-    new UserData('First Name'),
-    new UserData('First Name'),
-    new UserData('First Name'),
-    new UserData('First Name'),
-    new UserData('First Name'),
-    new UserData('First Name'),
+  users: UserEntity[] = [
+    new UserEntity(),
+    new UserEntity(),
+    new UserEntity(),
+    new UserEntity()
   ];
   families: Family[] = [];
   sarangbangs: Sarangbang[] = [
@@ -86,9 +80,7 @@ export class AppComponent {
   userByID : UserEntity = new UserEntity();
 
   public GetUserByID(id:number){
-    this.apiService.GetMemberByID(id).subscribe((result)=>{
-      this.userByID = result as UserEntity;
-    })
+    this.apiService.GetMemberByID(id);
   }
 
   public OnUserClick() {}

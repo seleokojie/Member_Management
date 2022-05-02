@@ -1,37 +1,36 @@
-import { Buffer } from "buffer";
 export class UserEntity {
   id!: number;
 
-  first_name!: string;
+  first_name: string = "firstName";
 
-  last_name!: string;
+  last_name: string = "lastName";
 
-  isAdmin!: boolean;
+  isAdmin: boolean = false;
 
-  gender!: string;
+  gender: string = "male";
 
-  email!: string;
+  email: string = "email";
 
-  phone!: string;
+  phone: string = "444-444-4444";
 
-  address!: string;
+  address: string = "address";
 
-  city!: string;
+  city: string = "city";
 
-  state!: string;
+  state: string = "state";
 
-  zipcode!: number;
+  zipcode: number = 0;
 
-  birthdate!: Date;
+  birthdate: Date = new Date(2000,1, 1);
 
   // @Column({ type: 'bytea', nullable: false })
   // profileImage!: Buffer; Needs lots of work to implement photos
 
-  password!: string;
+  password: string = "password";
 
-  visitation!: boolean;
+  visitation: boolean = false;
 
-  mokjang_id!: number;
+  mokjang_id: number = 0;
 
-  sarangbang_id!: number;
+  sarangbang_id: number = 0;
 }
