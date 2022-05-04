@@ -22,12 +22,13 @@ export class NavigationBarComponent implements OnInit {
     console.log(this.selectedSarang);
     console.log("name: " + this.searchName);
     if(this.selectedMok == 0){
+      //If only Name and Mokjang filter
       if(this.searchName == "" || this.searchName == "Search by Name..."){//no filter
         var test = this.appService.GetMembers().subscribe((result) =>{
           this.app.users = result as UserEntity[];
         });
       }
-      else{//Name filter only
+      else{//if only Name filter
         var test = this.appService.GetMembersByName(this.searchName).subscribe((result) =>{
           this.app.users = result as UserEntity[];
           console.log("name: " + this.searchName);
@@ -37,12 +38,12 @@ export class NavigationBarComponent implements OnInit {
 
     }
     if(this.selectedMok != 0){
-      if(this.selectedSarang != 0){//Mokjang filter
+      if(this.selectedSarang != 0){//If Mokjang and Sarangbang filter
         var test = this.appService.GetSarangbangMembers(this.selectedMok, this.selectedSarang).subscribe((result) =>{
           this.app.users = result as UserEntity[];
         });
       }
-      else{//Mokjang and Sarangbang Filter
+      else{// If only Mokjang Filter
         var test = this.appService.GetMokjangMembers(this.selectedMok).subscribe((result) =>{
           this.app.users = result as UserEntity[];
         });

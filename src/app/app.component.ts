@@ -1,3 +1,4 @@
+import { UserEditorComponent } from './user-editor/user-editor.component';
 import { ApiService } from './api.service';
 import { ProfileComponent } from './profile/profile.component';
 import { Sarangbang } from './sarangbang';
@@ -21,6 +22,7 @@ import { UserEntity } from './userEntity';
 export class AppComponent {
   title = 'app';
   tempUser: UserEntity = new UserEntity();
+  tempUserDepreciated : UserData = new UserData("Bob");
   constructor(public dialog: MatDialog, private apiService: ApiService) {}
 
   //This example shows how from an observable we can 'subscribe'; put the 'result' into a user and consoleLog that user
@@ -32,12 +34,14 @@ export class AppComponent {
     });
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(ProfileComponent, {
-      // width: '250px',
-      // maxHeight: '95vh',
-      // data: {name: this.name, animal: this.animal}
-      data: { name: this.tempUser.first_name },
+  openUserEditor(theUser : UserEntity): void {
+    console.log(theUser);
+    const dialogRef = this.dialog.open(UserEditorComponent, {
+      // maxWidth: '800px',
+      // maxHeight: '500px',
+
+      data: {user: theUser},
+      // data: { name: this.tempUser.first_name },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -46,12 +50,21 @@ export class AppComponent {
     });
   }
 
-  users: UserEntity[] = [
-    new UserEntity(),
-    new UserEntity(),
-    new UserEntity(),
-    new UserEntity()
-  ];
+  // openDialog(): void {
+  //   const dialogRef = this.dialog.open(ProfileComponent, {
+  //     // width: '250px',
+  //     // maxHeight: '95vh',
+  //     // data: {name: this.name, animal: this.animal}
+  //     data: { name: this.tempUser.first_name },
+  //   });
+
+  //   dialogRef.afterClosed().subscribe((result) => {
+  //     console.log('The dialog was closed');
+  //     // this.animal = result;
+  //   });
+  // }
+
+  users: UserEntity[] = [];
   families: Family[] = [];
   sarangbangs: Sarangbang[] = [
     new Sarangbang('Sarangbang Name 1', 1),

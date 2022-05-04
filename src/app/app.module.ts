@@ -75,7 +75,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonToggleModule,
 
   ],
-  providers: [],
+  providers: [AppComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -21,6 +21,21 @@ export class ApiService {
     );
   }
 
+  public UpdateMember(user : UserEntity){
+    console.log("Attempting to update: " + user.first_name);
+    var resultString = this.httpClient.patch<UserEntity>(
+      `${this.API_SERVER}/user-controller/UpdateMember`, user
+    );
+    resultString.subscribe((result) => {
+      if (result == null) {
+        throw NotFoundError;
+      } else {
+        console.log(result);
+      }
+    });
+    console.log(resultString);
+  }
+
   public GetMembers(): Observable<UserEntity[]> {
     return this.httpClient.get<UserEntity[]>(
       `${this.API_SERVER}/user-controller/GetMembers`
@@ -35,17 +50,10 @@ export class ApiService {
   }
 
   public GetMemberByID(id: number) {
-    this.httpClient
+    return this.httpClient
       .get<UserEntity>(
         `${this.API_SERVER}/user-controller/GetMemberByID?mokjang_id=` + id
       )
-      .subscribe((result) => {
-        if (result == null) {
-          throw NotFoundError;
-        } else {
-          this.UserSingleBuffer = result;
-        }
-      });
   }
 
   public GetMokjangMembers(mokjang_id: number): Observable<UserEntity[]> {

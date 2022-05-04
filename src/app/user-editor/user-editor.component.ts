@@ -1,7 +1,10 @@
+import { ApiService } from './../api.service';
+import { UserEntity } from './../userEntity';
 import { AppComponent } from './../app.component';
 import { UserData } from './../userData';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user-editor',
@@ -10,41 +13,37 @@ import { NgForm } from '@angular/forms';
 })
 export class UserEditorComponent implements OnInit {
 
-  @Input() user:UserData = new UserData("test dummy");
+  @Input() user:UserEntity = new UserEntity();
 
   OnSubmitChanges(data:any){
     //Temporary testing to show in broswer console that it works
-    console.log(data.value.fname);
+    console.log(data);
     console.log(data.value);
+    console.log(data.value as UserEntity);
 
     //This adjusts the local instance not the database instance; may be better to update the db then just retrieve the updated entry;
-    this.user.name = data.value.fname;
-    this.user.elname = data.value.lname;
-    this.user.homeAddress1 = data.value.homeAddress1;
-    this.user.homeAddress2 = data.value.homeAddress2;
-    this.user.city = data.value.city;
-    this.user.state = data.value.state;
+    this.user.first_name = data.fname;
+    this.user.last_name = data.lname;
+    this.user.address = data.homeAddress1;
+    // this.user.homeAddress2 = data.homeAddress2;
+    this.user.city = data.city;
+    this.user.state = data.state;
+    console.log(this.user);
+    console.log("Testing: " + this.user.id);
 
-    //change the database below
-    //
-    //A guess at what the SQL statement will look like
-    //
-    //UPDATE userTable SET firstName = data.value.fname, lastName = data.value.lname WHERE memberID = user.memberID
-    //
-    //where userTable is a table containing users in the database and firstName and lastName are columns in that table.
-
-    console.log("before: " + this.mainApp.editorMode);
-    this.mainApp.editorMode = false;
-    console.log("after: " + this.mainApp.editorMode);
+    var temp = this.apiService.UpdateMember(this.user);
+    console.log(temp);
   }
 
   public Cancel(){
     this.mainApp.editorMode = false;
   }
 
-  constructor(private mainApp:AppComponent) { }
+  constructor(private mainApp:AppComponent, private apiService: ApiService, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+    console.log(this.data.user);
+    this.user = this.data.user;
   }
 
 }
