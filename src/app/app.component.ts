@@ -30,7 +30,7 @@ export class AppComponent {
     this.apiService.testConnection().subscribe((result) => {
       console.log(result);
       var user: UserEntity = result;
-      console.log(user.first_name);
+      console.log(user.efname);
     });
   }
 
@@ -85,8 +85,8 @@ export class AppComponent {
 
   public CreateTestUser() {
     var user: UserEntity = new UserEntity();
-    user.first_name = 'TEST NAME';
-    user.address = 'TEST ADDRESS';
+    user.efname = 'TEST NAME';
+    user.homeaddressstreetname1 = 'TEST ADDRESS';
     this.apiService.CreateUser(user);
   }
 

@@ -1,25 +1,47 @@
 export class UserEntity {
+  member_id: number = 0;
   id: number = 0;
+  householdid:number = 0;
 
-  first_name: string = "firstName";
+  mokjang_id: number = 0;
 
-  last_name: string = "lastName";
+  sarangbang_id: number = 0;
+
+  active:boolean = true;
+
+  admin: boolean = false;
+  householdprimarycontact:string = "primary contact";
+  email_notification: boolean = false;
+  anniversary:string = "anniversary";
+  campusname: string = "campus name";
+  image_url:string = "image url";
+
+  kfname:string = "korean first name";
+
+  efname: string = "firstName";
+
+  emname: string = "middleName"
+
+  elname: string = "lastName";
 
   isAdmin: boolean = false;
 
   gender: string = "male";
 
-  email: string = "email";
+  homeemail: string = "home email";
 
-  phone: string = "444-444-4444";
+  homephonenumber: string = "home number";
 
-  address: string = "address";
+  mobilephonenumber: string = "mobile number"
 
-  city: string = "city";
+  homeaddressstreetname1: string = "address 1";
+  homeaddressstreetname2: string = "address 2";
 
-  state: string = "state";
+  homeaddresscity: string = "city";
 
-  zipcode: number = 0;
+  homeaddressstate: string = "state";
+
+  homeaddresszipcode: number = 0;
 
   birthdate: Date = new Date(2000,1, 1);
 
@@ -29,8 +51,4 @@ export class UserEntity {
   password: string = "password";
 
   visitation: boolean = false;
-
-  mokjang_id: number = 0;
-
-  sarangbang_id: number = 0;
 }

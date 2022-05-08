@@ -22,14 +22,14 @@ export class UserEditorComponent implements OnInit {
     console.log(data.value as UserEntity);
 
     //This adjusts the local instance not the database instance; may be better to update the db then just retrieve the updated entry;
-    this.user.first_name = data.fname;
-    this.user.last_name = data.lname;
-    this.user.address = data.homeAddress1;
+    this.user.efname = data.fname;
+    this.user.elname = data.lname;
+    this.user.homeaddressstreetname1 = data.homeAddress1;
     // this.user.homeAddress2 = data.homeAddress2;
-    this.user.city = data.city;
-    this.user.state = data.state;
+    this.user.homeaddresscity = data.city;
+    this.user.homeaddressstate = data.state;
     console.log(this.user);
-    console.log("Testing: " + this.user.id);
+    console.log("Testing: " + this.user.member_id);
 
     var temp = this.apiService.UpdateMember(this.user);
     console.log(temp);

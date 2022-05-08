@@ -22,7 +22,7 @@ export class ApiService {
   }
 
   public UpdateMember(user : UserEntity){
-    console.log("Attempting to update: " + user.first_name);
+    console.log("Attempting to update: " + user.efname);
     var resultString = this.httpClient.patch<UserEntity>(
       `${this.API_SERVER}/user-controller/UpdateMember`, user
     );
@@ -75,7 +75,7 @@ export class ApiService {
 
   public CreateUser(user: UserEntity) {
     console.log(
-      'Trying to create a user: ' + user.first_name + ' email: ' + user.email
+      'Trying to create a user: ' + user.efname + ' email: ' + user.homeemail
     );
     var resultString: Observable<Object> = this.httpClient.post(
       `${this.API_SERVER}/user-controller/CreateUser`,

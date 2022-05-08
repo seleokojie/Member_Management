@@ -18,9 +18,9 @@ export class NavigationBarComponent implements OnInit {
   constructor(private app: AppComponent, private appService: ApiService) {}
 
   Search(){
-    console.log(this.selectedMok);
-    console.log(this.selectedSarang);
-    console.log("name: " + this.searchName);
+    // console.log(this.selectedMok);
+    // console.log(this.selectedSarang);
+    // console.log("name: " + this.searchName);
     if(this.selectedMok == 0){
       //If only Name and Mokjang filter
       if(this.searchName == "" || this.searchName == "Search by Name..."){//no filter
