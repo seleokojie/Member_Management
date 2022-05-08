@@ -3,20 +3,47 @@
     <div style="display: inline-flex;">
       <!-- <img style="max-width: 250px; max-height:250px; margin-inline:15px" src="{{user.photoRef}}"> -->
       <form #namesForm="ngForm" (ngSubmit)="OnSubmitChanges(namesForm.value)">
+        <!-- NAME STUFF -->
         <label for="fname">First Name:</label><br>
         <input type="text" id="fname" name="fname" [ngModel]="user.efname"><br>
         <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname" [ngModel]="user.elname"><br><br>
+        <input type="text" id="lname" name="lname" [ngModel]="user.elname"><br>
+        <label for="kfname">Korean First Name:</label><br>
+        <input type="text" id="kfname" name="kfname" [ngModel]="user.kfname"><br><br>
 
-        <label for="homeAddress1">Home Address 1:</label><br>
+        <!-- ADDRESS STUFF -->
+        <label for="homeAddress1">Home Address:</label><br>
         <input type="text" id="homeAddress1" name="homeAddress1" [ngModel]="user.homeaddressstreetname1"><br>
-        <!-- <label for="homeAddress2">Home Address 2:</label><br>
-      <input type="text" id="homeAddress2" name="homeAddress2" [ngModel]="user.homeAddress2"><br><br> -->
+
         <label for="city">City:</label><br>
         <input type="text" id="city" name="city" [ngModel]="user.homeaddresscity"><br>
 
         <label for="state">State:</label><br>
         <input type="text" id="state" name="state" [ngModel]="user.homeaddressstate"><br>
+
+        <label for="zipcode">Zipcode:</label><br>
+        <input type="text" id="zipcode" name="zipcode" [ngModel]="user.homeaddresszipcode"><br><br>
+
+        <!-- Contact Info -->
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" [ngModel]="user.homeemail"><br>
+        <label for="phone">Phone:</label><br>
+        <input type="text" id="phone" name="phone" [ngModel]="user.mobilephonenumber"><br><br>
+
+
+        <!-- IDs -->
+        <label for="mokjang_id">Mokjang ID:</label><br>
+        <input type="text" id="mokjang_id" name="mokjang_id" [ngModel]="user.mokjang_id"><br>
+
+        <label for="sarangbang_id">Sarangbang ID:</label><br>
+        <input type="text" id="sarangbang_id" name="sarangbang_id" [ngModel]="user.sarangbang_id"><br>
+
+        <label for="family_id">Family ID:</label><br>
+        <input type="text" id="family_id" name="family_id" [ngModel]="user.householdid"><br>
+
+        <!-- OTHER -->
+        <label for="visitation">Needs Visitation:</label><br>
+        <input type="checkbox" id="visitation" name="visitation" [ngModel]="user.visitation"><br>
 
         <input type="submit" value="Submit Changes">
       </form>

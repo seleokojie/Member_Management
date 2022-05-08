@@ -6,11 +6,6 @@
   <div style="display: flex; flex-wrap:wrap; width:100%; justify-content:center; margin-top:auto">
     <div class="spacing">
       <form>
-        <mat-checkbox>Needs Visitation</mat-checkbox>
-      </form>
-    </div>
-    <div class="spacing">
-      <form>
         <mat-form-field>
           <mat-label>Filter by Mokjang</mat-label>
           <mat-select disableOptionCentering [(ngModel)]="selectedMok" name="mok">
@@ -41,29 +36,37 @@
       <form>
         <mat-label></mat-label>
         <mat-form-field>
-          <input type="text" placeholder="Search by Name..." matInput [(ngModel)]="searchName" [formControl]="myControl" [matAutocomplete]="auto" [value]="searchName">
+          <input type="text" placeholder="Search by Name..." matInput [(ngModel)]="searchName" [formControl]="myControl"
+            [matAutocomplete]="auto" [value]="searchName">
         </mat-form-field>
 
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let user of userNames" [value]="user">{{user}}</mat-option>
-        </mat-autocomplete></form>
+        </mat-autocomplete>
+      </form>
 
     </div>
 
     <div class="spacing" style="margin-left:0px">
       <!-- SEARCH BUTTON -->
-      <button mat-raised-button color="primary" type="submit" (click)="Search()"
-      matBadge="{{userNames.length}}" matBadgeColor="accent">Search</button>
-    </div>
+      <button mat-raised-button color="primary" type="submit" (click)="Search()" matBadge="{{this.app.users.length}}"
+        matBadgeColor="accent">Search</button>
 
-    <div class="spacing" style="display: flex; flex-direction: column;">
+    </div>
+    <div class="spacing" style="margin-left:0px"><button mat-raised-button color="primary" type="submit"
+        (click)="SearchForNeedsVisitation()">Search for Needs Visitation</button></div>
+
+
+
+    <!-- Sorting -->
+    <!-- <div class="spacing" style="display: flex; flex-direction: column;">
       <mat-label style="text-align: center;">Sort by:</mat-label>
       <mat-button-toggle-group name="sortStyle">
         <mat-button-toggle value="sort_alphabetical">Alphabetical</mat-button-toggle>
         <mat-button-toggle value="sort_mokjang">Mokjang</mat-button-toggle>
         <mat-button-toggle value="sort_sarangbang">Sarangbang</mat-button-toggle>
       </mat-button-toggle-group>
-    </div>
+    </div> -->
 
   </div>
 </div>

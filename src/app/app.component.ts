@@ -1,16 +1,12 @@
 import { UserEditorComponent } from './user-editor/user-editor.component';
 import { ApiService } from './api.service';
-import { ProfileComponent } from './profile/profile.component';
 import { Sarangbang } from './sarangbang';
 import { Family } from './family';
 import { UserData } from './userData';
-import { Component, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { MokjangSelectComponent } from './mokjang-select/mokjang-select.component';
-import { SarangbangComponent } from './Sarangbang/Sarangbang.component';
 import {
   MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
 import { UserEntity } from './userEntity';
 
@@ -49,20 +45,6 @@ export class AppComponent {
       // this.animal = result;
     });
   }
-
-  // openDialog(): void {
-  //   const dialogRef = this.dialog.open(ProfileComponent, {
-  //     // width: '250px',
-  //     // maxHeight: '95vh',
-  //     // data: {name: this.name, animal: this.animal}
-  //     data: { name: this.tempUser.first_name },
-  //   });
-
-  //   dialogRef.afterClosed().subscribe((result) => {
-  //     console.log('The dialog was closed');
-  //     // this.animal = result;
-  //   });
-  // }
 
   users: UserEntity[] = [];
   families: Family[] = [];

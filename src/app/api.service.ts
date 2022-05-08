@@ -23,22 +23,20 @@ export class ApiService {
 
   public UpdateMember(user : UserEntity){
     console.log("Attempting to update: " + user.efname);
-    var resultString = this.httpClient.patch<UserEntity>(
+    return this.httpClient.patch<UserEntity>(
       `${this.API_SERVER}/user-controller/UpdateMember`, user
     );
-    resultString.subscribe((result) => {
-      if (result == null) {
-        throw NotFoundError;
-      } else {
-        console.log(result);
-      }
-    });
-    console.log(resultString);
   }
 
   public GetMembers(): Observable<UserEntity[]> {
     return this.httpClient.get<UserEntity[]>(
       `${this.API_SERVER}/user-controller/GetMembers`
+    );
+  }
+
+  public GetNeedsVisitation(): Observable<UserEntity[]> {
+    return this.httpClient.get<UserEntity[]>(
+      `${this.API_SERVER}/user-controller/GetNeedsVisitation`
     );
   }
 

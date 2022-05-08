@@ -5,31 +5,11 @@
 <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
 
   <!-- Display the user names -->
-  <div *ngIf="editorMode == false" style="display: flex; flex-direction: row; flex-wrap: wrap; width: 100%;">
+  <div style="display: flex; flex-direction: row; flex-wrap: wrap; width: 100%;">
     <div class="user-column-list">
       <div *ngFor="let user of users; let i=index">
-        <mat-card (click)="openUserEditor(user)" style="cursor:pointer; margin-top:0; margin-left:5px">{{i + 1}}.) {{user.efname}} {{user.elname}} {{user.homeemail}} id:{{user.id}}</mat-card>
+        <mat-card (click)="openUserEditor(user)" style="cursor:pointer; margin-top:0; margin-left:5px">{{i + 1}}.) {{user.efname}} {{user.elname}}</mat-card>
       </div>
     </div>
   </div>
-
-  <!-- editorMode stuff -->
-  <!-- <div *ngIf="editorMode == true">
-    <app-user-editor [user]="selectedUser"></app-user-editor>
-  </div> -->
-
 </div>
-<!-- <button (click)="openUserEditor()">
-  Press Me
-</button> -->
-<!-- <button (click)="testConnection()">
-  TEST CONNECTION
-</button>
-<button (click)="CreateTestUser()">
-  TEST CREATE USER
-</button>
-<div>
-  <p>{{tempUser.first_name}</p>
-  <p>{{tempUser.address}}</p>
-  <p>{{tempUser.city}}</p>
-</div> -->

@@ -1,11 +1,8 @@
 import { UserEntity } from './../userEntity';
 import { ApiService } from './../api.service';
-
 import { AppComponent } from './../app.component';
-import { Sarangbang } from './../sarangbang';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -15,7 +12,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class NavigationBarComponent implements OnInit {
   //Holds currently selected drop down menu item
 
-  constructor(private app: AppComponent, private appService: ApiService) {}
+  constructor(public app: AppComponent, private appService: ApiService) {}
+
+  SearchForNeedsVisitation(){
+    var test = this.appService.GetNeedsVisitation().subscribe((result) =>{
+      this.app.users = result as UserEntity[];
+    });
+  }
 
   Search(){
     // console.log(this.selectedMok);
