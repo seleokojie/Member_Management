@@ -34,6 +34,7 @@ h3 {
 .navBar{
   width: 100%;
   background-color: #688ccb;
+  /* background-color: var(--app-bar-color); */
   display:flex;
   flex-direction: row;
 }

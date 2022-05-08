@@ -1,29 +1,44 @@
-.user-column-list{
+.user-column-list {
   column-count: 3;
-  column-rule: 2px dotted black;
+  column-rule: 2px;
+  column-gap: 5px;
+  /* column-fill: balance; */
 
   align-items: center;
   align-content: center;
   text-align: left;
 
+  /* display: flex; */
+  /* justify-content: space-evenly; */
   width: 100%;
 
 }
 
-@media screen and (max-width: 650px) {
+.myCard {
+  cursor: pointer;
+  margin: 5px;
+  display: inline-block;
+  width: 100%;
+  max-width: 200px;
+}
+
+@media screen and (max-width: 700px) {
+
   /* table td:nth-of-type(3) {
       display: none;
   } */
-  .user-column-list{
+  .user-column-list {
     column-count: 2;
     /* background-color: red; */
   }
 }
-@media screen and (max-width: 376px) {
+
+@media screen and (max-width: 463px) {
+
   /* table td:nth-of-type(4) {
       display: none;
   } */
-  .user-column-list{
+  .user-column-list {
     column-count: 1;
     /* background-color: green; */
   }

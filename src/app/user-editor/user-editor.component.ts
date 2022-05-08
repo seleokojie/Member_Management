@@ -44,6 +44,9 @@ export class UserEditorComponent implements OnInit {
 
     //Update the member
     var temp = this.apiService.UpdateMember(this.user);
+    temp.subscribe((result) =>{
+      console.log("Attmpted update on: " + result.efname + " id: " + result.member_id);
+    })
 
     //Console Info
     console.log(this.user);
